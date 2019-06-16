@@ -64,7 +64,7 @@ img{
 }
 
 .box{
-    box-sizing:
+    box-sizing: content-box;
     display:inline-block;
     width:580px;
     height:160px;
