@@ -34,10 +34,12 @@ function Args(op, n1, n2){
     this.n1 = n1;
     this.n2 = n2;
 }
-
 var arg1 = new Args('-', 7, 4);
-var arg2 = new Args('+', 2, 8);
+var arg2 = new Args('*', 2, 8);
 
+calculate(args);
+calculate(arg1);
+calculate(arg2);
 
 
 // ---Assignment 3: Function, Array, and Object
