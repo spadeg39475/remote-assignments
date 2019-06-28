@@ -1,0 +1,39 @@
+<% include partials/header %>
+    <h1>累加計算器</h1>
+    
+    <form action="/sum.html" method="post">
+        <input type="text" id = "number" name = "number" placeholder="Please enter a number">
+        <button type ="submit" id = "btn">Submit</button>
+    </form>
+    <% var r = /^[0-9]*[1-9][0-9]*$/ ; %> 
+    <% if(r.test(name)){ %>
+        <% if(name == 1){ %> 
+            <h3>1的總和是<span id= 'sum2'></span></h3>
+        <% }else if(name == 2){  %>
+            <h3>1+2的總和是<span id= 'sum2'></span></h3>
+        <% }else if(name == 3){  %>
+            <h3>1+2+3的總和是<span id= 'sum2'></span></h3>
+        <% }else{ %>
+            <h3>1+2+....+<%= name %>的總和是<span id= 'sum2'></span></h3>
+        <% }; %>
+    <% }else{ %>
+        <h3> Wrong Parameter </h3>
+    <% }; %>
+    
+    
+    
+
+<script>
+    var XHR2 = new XMLHttpRequest();
+
+    XHR2.onreadystatechange = () => {
+        if (XHR2.readyState == 4 && XHR2.status ==200){
+            document.getElementById('sum2').innerHTML = XHR2.responseText;
+        }
+    };
+    XHR2.open("get", "http://localhost:3000/getData?number=" + <%= name %>);
+    XHR2.send();
+</script>
+
+
+<% include partials/footer %>
