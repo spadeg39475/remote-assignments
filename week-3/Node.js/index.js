@@ -39,9 +39,9 @@ app.get('/getData', (req, res) => {
 });
 
 
-app.post('/sum.html', (req, res) => {
-   res.render('sum', {name: req.body.number});
-});
+// app.post('/sum.html', (req, res) => {
+//    res.render('sum2', {name: req.body.number});
+// });
 
 
 app.get('/myName', (req, res) => {

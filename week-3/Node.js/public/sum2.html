@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sum</title>
+</head>
+<body>
+    <h1>累加計算器</h1>
+    <form action="/sum.html" method="post">
+        <input type="text" id = "number" name = "number" placeholder="Please enter a number">
+        <button type ="submit" id = "btn">Submit</button>
+    </form>
+    
+    <h3><span class= "example">ex:</span>1+2+....+<span class= "example">10</span>的總和是<span id= 'sum'></span></h3>
+    
+
+    <script >
+        //取得1+....+10的值
+        var XHR = new XMLHttpRequest();
+        XHR.onreadystatechange = () => {
+        if (XHR.readyState == 4 && XHR.status ==200){
+            document.getElementById('sum').innerHTML = XHR.responseText;
+            }
+        };
+        XHR.open("GET", "http://localhost:3000/getData?number=10");
+        XHR.send();
+        
+    </script>
+</body>
+</html>
+
