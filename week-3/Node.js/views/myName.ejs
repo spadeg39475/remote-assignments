@@ -1,10 +1,11 @@
 <% include partials/header %>
 
-
+//若有cookie存著
 <% if(name){ %>
     <h1>Hi <%=name %> !</h1>
     <form action="/logOut" method="POST">
     <button type ="submit">Log Out</button>
+//沒有cookie
 <% }else{ %>
     <form action="" method="POST">
         <input type="text" id="userName" name="userName" placeholder="Please enter your name">
