@@ -24,8 +24,8 @@
     
 
 <script>
+    //取得1+....+n(輸入)的值
     var XHR2 = new XMLHttpRequest();
-
     XHR2.onreadystatechange = () => {
         if (XHR2.readyState == 4 && XHR2.status ==200){
             document.getElementById('sum2').innerHTML = XHR2.responseText;
@@ -33,6 +33,7 @@
     };
     XHR2.open("get", "http://localhost:3000/getData?number=" + <%= name %>);
     XHR2.send();
+
 </script>
 
 

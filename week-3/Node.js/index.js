@@ -33,13 +33,14 @@ app.get('/getData', (req, res) => {
         }else{
             res.send('Wrong Parameter');
         }
+    }else{
+        res.send('Lack of Parameter');
     }
-    res.send('Lack of Parameter');
 });
 
 
 app.post('/sum.html', (req, res) => {
-    res.render('sum', { name: req.body.number });
+   res.render('sum', {name: req.body.number});
 });
 
 
