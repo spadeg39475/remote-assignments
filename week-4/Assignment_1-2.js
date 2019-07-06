@@ -29,12 +29,16 @@ function ajax(src, callback){
 function render(data){
     // your code here.
     // document.createElement() and appendChild() methods are preferred.
-    
+    let productList = document.querySelector("#productList");
+    let newLi;
+
     for (i=0; i < data.length; i++){
-        var newLi = document.createElement("li");
-        newLi.innerHTML += data[i].name +" (" + data[i].description + ") " + " 價錢:" + data[i].price ;
-        document.body.appendChild(newLi);
+        newLi = document.createElement("li");
+        newLi.textContent += data[i].name +" (" + data[i].description + ") " + " 價錢:" + data[i].price ;
+        productList.appendChild(newLi);
     }
+
+        
 }
 
 ajax("https://cwpeng.github.io/live-records-samples/data/products.json", function(response){
